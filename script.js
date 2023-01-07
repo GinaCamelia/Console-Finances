@@ -90,11 +90,12 @@ let finances = [
     // Step 1: Find the total number of elements (length) in the array.
     let totalMonths = finances.length;
 
+    //Step 2: Find the net profits/losses over the entire period
 
-
-
-
-
+    let netProfits = 0; //initialized a variable to hold the net profit/loss
+    for (let i = 0; i < finances.length; i++) { // iterate through the list of finances
+        netProfits += finances[i][1]; // sums up the total in the amount of net profit/loss
+    }
 
 
 
@@ -107,3 +108,4 @@ let finances = [
     console.log('Financial Analysis');
     console.log('----------------------------');
     console.log('Total Months:'+ totalMonths);
+    console.log('Total: $' + netProfits.toFixed(2));
