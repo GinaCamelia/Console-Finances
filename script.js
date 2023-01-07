@@ -90,14 +90,29 @@ let finances = [
     // Step 1: Find the total number of elements (length) in the array.
     let totalMonths = finances.length;
 
-    //Step 2: Find the net profits/losses over the entire period
+    //  Step 2: Find the net profits/losses over the entire period
 
     let netProfits = 0; //initialized a variable to hold the net profit/loss
     for (let i = 0; i < finances.length; i++) { // iterate through the list of finances
-        netProfits += finances[i][1]; // sums up the total in the amount of net profit/loss
+        netProfits += finances[i][1]; // sums up the total in the amount of net profit/loss after certain deductions are made
     }
 
 
+    //  Step 3: How do I find the average changes in Profit / Loss over the entire period?
+    let totalChange = 0; // initialize a variable to store the total change in the net profit/loss
+
+    for (let i = 1; i < finances.length; i++) { // iterate through the list of finances, startting at the second month (since there is no cahnge in profit for the first month)
+        let currentProfit = finances[i][1]; // get the current month's proffit
+        let previousProfit = finances[i - 1][1]; // get the previous month's profit
+        let changeInProfit = currentProfit - previousProfit; // calculate the change in profit between the current month and previous month
+        totalChange += changeInProfit; // add the change in profit to the total change
+    }
+    // console.log(totalChange); 
+    // divide the total change in profits by the number of changes in profits
+    let averageChange = totalChange / (finances.length - 1);
+    // console.log(averageChange);
+
+    
 
 
 
@@ -109,3 +124,4 @@ let finances = [
     console.log('----------------------------');
     console.log('Total Months:'+ totalMonths);
     console.log('Total: $' + netProfits.toFixed(2));
+    console.log('Average Change: $' + averageChange.toFixed(2));
