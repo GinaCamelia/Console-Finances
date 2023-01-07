@@ -112,6 +112,28 @@ let finances = [
     let averageChange = totalChange / (finances.length - 1);
     // console.log(averageChange);
 
+    //  Step 4: How do I find the greatest increase in Profit / Loss over the entire period?
+    //      Step 4a: Initialize viariables to store the date and amount of the greatest increase and decrease in profits
+    let greatestIncreaseDate = '';
+    let greatestIncreaseAmount = 0;
+    let greatestDecreaseDate = '';
+    let greatestDecreaseAmount = 0;
+
+    //      Step 4b: get the average change in profit over the entire period from Step 3
+    for (i = 1; i < finances.length; i++) {
+        let currentProfit = finances[i][1]; // get the current month's proffit
+        let previousProfit = finances[i - 1][1]; // get the previous month's profit
+        let changeInProfit = currentProfit - previousProfit; // calculate the change in profit between the current and previous months; 
+
+        // Step 4c: if the change in profit is greater than the greatest increase amount, update the greatest increase variables.
+        if (changeInProfit > greatestIncreaseAmount) {
+            greatestIncreaseDate = finances[i - 1][0];
+            greatestIncreaseAmount = changeInProfit;
+        }
+
+    // Step 5: 
+    }
+
     
 
 
