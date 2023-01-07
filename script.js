@@ -87,6 +87,13 @@ let finances = [
     ['Feb-2017', 671099]
     ];
 
+
+    // const result = finances.find(finance =>
+    //     finance[1] === -1163797);
+    // console.log(result);
+
+
+
     // Step 1: Find the total number of elements (length) in the array.
     let totalMonths = finances.length;
     //console.log(totalMonths);
@@ -102,46 +109,33 @@ let finances = [
     //  Step 3: How do I find the average changes in Profit / Loss over the entire period?
     let totalChange = 0; // initialize a variable to store the total change in the net profit/loss
 
-    for (let i = 1; i < finances.length; i++) { // iterate through the list of finances, startting at the second month (since there is no cahnge in profit for the first month)
-        let currentProfit = finances[i][1]; // get the current month's proffit
-        let previousProfit = finances[i - 1][1]; // get the previous month's profit
-        let changeInProfit = currentProfit - previousProfit; // calculate the change in profit between the current month and previous month
-        totalChange += changeInProfit; // add the change in profit to the total change
-    }
-    // console.log(totalChange); 
-    // divide the total change in profits by the number of changes in profits
-    let averageChange = totalChange / (finances.length - 1);
-    // console.log(averageChange);
-
     //  Step 4: How do I find the greatest increase in Profit / Loss over the entire period?
-    //      Step 4a: Initialize viariables to store the date and amount of the greatest increase and decrease in profits
-    let greatestIncreaseDate = '';
+    //  Step 4a: Initialize variables for greatest increase and decrease
+    let greatestIncreaseDate = finances[0][0];
     let greatestIncreaseAmount = 0;
-    let greatestDecreaseDate = '';
+    let greatestDecreaseDate = finances[0][0];
     let greatestDecreaseAmount = 0;
 
-    //      Step 4b: get the average change in profit over the entire period from Step 3
-    for (i = 1; i < finances.length; i++) {
+    for (let i = 1; i < finances.length; i++) { // iterate through the list of finances, startting at the second month (since there is no cahnge in profit for the first month)
         let currentProfit = finances[i][1]; // get the current month's proffit
-        let previousProfit = finances[i - 1][1]; // get the previous month's profit
-        let changeInProfit = currentProfit - previousProfit; // calculate the change in profit between the current and previous months; 
+        let previousProfit = finances[i-1][1]; // get the previous month's profit
+        let changeInProfit = currentProfit - previousProfit; // calculate the change in profit between the current month and previous month
+        totalChange += changeInProfit; // add the change in profit to the total change
 
-        // Step 4c: if the change in profit is greater than the greatest increase amount, update the greatest increase variables.
+        //  Step 4b: if the change in profit is greater than the greatest increase amount, update the greatest increase variables.
         if (changeInProfit > greatestIncreaseAmount) {
-            greatestIncreaseDate = finances[i - 1][0];
+            greatestIncreaseDate = finances[i][0];
             greatestIncreaseAmount = changeInProfit;
-        }
-        //console.log(greatestIncreaseDate);
-        //console.log(greatestIncreaseAmount);
 
-    // Step 5: If the change in profits is less than the current greatest decrease in profits, update the greatest decrease variables
-        if (changeInProfit < greatestDecreaseAmount) {
-            greatestDecreaseDate = finances[i - 1][0];
+        //  Step 5: If the change in profits is less than the current greatest decrease in profits, update the greatest decrease variables
+        } else if (changeInProfit < greatestDecreaseAmount) {
+            greatestDecreaseDate = finances[i-1][0];
             greatestDecreaseAmount = changeInProfit;
         }
-        //console.log(greatestDecreaseDate);
-        //console.log(greatestDecreaseAmount);
+        
     }
+    // divide the total change in profits by the number of changes in profits
+    let averageChange = totalChange / (finances.length - 1);
 
     
 
