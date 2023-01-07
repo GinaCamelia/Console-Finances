@@ -86,3 +86,24 @@ let finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099]
     ];
+
+    // Step 1: Find the total number of elements (length) in the array.
+    let totalMonths = finances.length;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    console.log('Financial Analysis');
+    console.log('----------------------------');
+    console.log('Total Months:'+ totalMonths);
