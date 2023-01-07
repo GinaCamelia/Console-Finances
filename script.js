@@ -89,6 +89,7 @@ let finances = [
 
     // Step 1: Find the total number of elements (length) in the array.
     let totalMonths = finances.length;
+    //console.log(totalMonths);
 
     //  Step 2: Find the net profits/losses over the entire period
 
@@ -130,21 +131,19 @@ let finances = [
             greatestIncreaseDate = finances[i - 1][0];
             greatestIncreaseAmount = changeInProfit;
         }
+        //console.log(greatestIncreaseDate);
+        //console.log(greatestIncreaseAmount);
 
     // Step 5: If the change in profits is less than the current greatest decrease in profits, update the greatest decrease variables
         if (changeInProfit < greatestDecreaseAmount) {
             greatestDecreaseDate = finances[i - 1][0];
             greatestDecreaseAmount = changeInProfit;
         }
+        //console.log(greatestDecreaseDate);
+        //console.log(greatestDecreaseAmount);
     }
 
     
-
-
-
-
-
-
 
     console.log('Financial Analysis');
     console.log('----------------------------');
@@ -152,3 +151,4 @@ let finances = [
     console.log(`Total: $${netProfits.toFixed(2)};`);
     console.log(`Average Change: $${averageChange.toFixed(2)};`);
     console.log(`Greatest increase in profits in ${greatestIncreaseDate}: was ($${greatestIncreaseAmount});`);
+    console.log(`Greatest decrease in profits in ${greatestDecreaseDate}: was ($${greatestDecreaseAmount});`);
