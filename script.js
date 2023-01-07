@@ -87,13 +87,6 @@ let finances = [
     ['Feb-2017', 671099]
     ];
 
-
-    // const result = finances.find(finance =>
-    //     finance[1] === -1163797);
-    // console.log(result);
-
-
-
     // Step 1: Find the total number of elements (length) in the array.
     let totalMonths = finances.length;
     //console.log(totalMonths);
