@@ -42,6 +42,8 @@ N/A
 ## Usage
 
 Open the html file and inspect the console. The console should show the following information:
+![](./resources/ss-of-console-output.png)
+Deployed application: ![]
 
 ## Credits
 
