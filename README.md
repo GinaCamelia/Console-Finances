@@ -43,7 +43,7 @@ N/A
 
 Open the html file and inspect the console. The console should show the following information:
 ![](./resources/ss-of-console-output.png)
-Deployed application: ![]
+Deployed application: https://ginacamelia.github.io/Console-Finances/
 
 ## Credits
 
