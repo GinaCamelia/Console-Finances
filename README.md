@@ -42,7 +42,7 @@ N/A
 ## Usage
 
 Open the html file and inspect the console. The console should show the following information:
-![](./resources/ss-of-console-output.png)
+![](./resources/ss-of-output.png)
 Deployed application: https://ginacamelia.github.io/Console-Finances/
 
 ## Credits
