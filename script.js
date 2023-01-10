@@ -122,10 +122,9 @@ let finances = [
 
         //  Step 5: If the change in profits is less than the current greatest decrease in profits, update the greatest decrease variables
         } else if (changeInProfit < greatestDecreaseAmount) {
-            greatestDecreaseDate = finances[i-1][0];
+            greatestDecreaseDate = finances[i][0];
             greatestDecreaseAmount = changeInProfit;
         }
-        
     }
     // divide the total change in profits by the number of changes in profits
     let averageChange = totalChange / (finances.length - 1);
@@ -135,7 +134,7 @@ let finances = [
     console.log('Financial Analysis');
     console.log('----------------------------');
     console.log(`Total Months: ${totalMonths};`);
-    console.log(`Total: $${netProfits.toFixed(2)};`);
+    console.log(`Total: $${netProfits};`);
     console.log(`Average Change: $${averageChange.toFixed(2)};`);
     console.log(`Greatest increase in profits in ${greatestIncreaseDate}: was ($${greatestIncreaseAmount});`);
     console.log(`Greatest decrease in profits in ${greatestDecreaseDate}: was ($${greatestDecreaseAmount});`);
